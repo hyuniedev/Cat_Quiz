@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speedMove = 300;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Animator anim;
+    private Vector3 v3 = new Vector3(1,0,0);
     private bool isGround = false;
     private float horizontal;
     private bool isRight = true;
@@ -153,7 +154,8 @@ public class Player : MonoBehaviour
     }
     private bool CheckGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, layerMask);
+        v3 = isRight ? v3 * 0.4f : v3 * -0.4f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + v3, Vector2.down, 0.6f, layerMask);
         return hit.collider != null;
     }
 }
