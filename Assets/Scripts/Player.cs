@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private bool isRight = true;
     private int indexIdle = 0;
     private bool change = true;
+    private bool isAngry = true;
     private int[] iIdle = { 0, 1, 0, 3, 2, 0, 1, 2, 3, 1, 0, 4 };
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FindObjectOfType<Key>().getHaveKey() && isAngry)
+        {
+            anim.SetBool("angry", true);
+            Invoke(nameof(resetStateAngry), 1.2f);
+        }
         if(rb.velocity.x != 0)
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -49,7 +55,6 @@ public class Player : MonoBehaviour
         }
         Jump();
         Open();
-        Angry();
     }
 
 
@@ -106,20 +111,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-    private void Angry()
-    {
-        if (horizontal == 0)
-        {
-            if (isGround && Input.GetKeyDown(KeyCode.Q))
-            {
-                anim.SetBool("angry", true);
-            }
-            if (Input.GetKeyUp(KeyCode.Q))
-            {
-                anim.SetBool("angry", false);
-            }
-        }
-    }
     private void ChangeIdle()
     {
         if(!Input.anyKey)
@@ -155,7 +146,12 @@ public class Player : MonoBehaviour
     private bool CheckGround()
     {
         v3 = isRight ? v3 * 0.4f : v3 * -0.4f;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + v3, Vector2.down, 0.6f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + v3, Vector2.down, 0.8f, layerMask);
         return hit.collider != null;
+    }
+    private void resetStateAngry()
+    {
+        isAngry = false;
+        anim.SetBool("angry", false);
     }
 }
