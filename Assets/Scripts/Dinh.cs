@@ -19,5 +19,9 @@ public class Dinh : MonoBehaviour
                 dinh[i].GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             }
         }
+        if (collision.gameObject.layer.Equals("Ground"))
+        {
+            transform.position = transform.position;
+        }
     }
 }

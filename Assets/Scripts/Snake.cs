@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class Snake : MonoBehaviour
 {
     [SerializeField] private Transform aPoint, bPoint;
     [SerializeField] private float speed;
@@ -18,32 +18,15 @@ public class MovingPlatform : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
-        if(Vector2.Distance(transform.position, aPoint.position) < 0.1f)
+        if (Vector2.Distance(transform.position, aPoint.position) < 0.1f)
         {
             target = bPoint.position;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
-        else if(Vector2.Distance(transform.position, bPoint.position) < 0.1f)
+        else if (Vector2.Distance(transform.position, bPoint.position) < 0.1f)
         {
             target = aPoint.position;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            collision.transform.SetParent(transform);
-
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision != null)
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                collision.transform.SetParent(null);
-            }
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
     }
 }
