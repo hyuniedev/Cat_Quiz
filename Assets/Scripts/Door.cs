@@ -45,6 +45,10 @@ public class Door : MonoBehaviour
                 isEnterPlayer = true;
                 if (okOpen) anim.SetFloat("checkOpen", 1);
             }
+            else
+            {
+                timeHoldKey = 0;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -53,6 +57,7 @@ public class Door : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
+                timeHoldKey = 0;
                 okOpen = false;
                 keyE.SetActive(false);
                 anim.SetFloat("checkOpen", 0);

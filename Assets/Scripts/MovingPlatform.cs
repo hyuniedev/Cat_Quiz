@@ -7,7 +7,6 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private Transform aPoint, bPoint;
     [SerializeField] private float speed;
     private Vector3 target;
-    private bool isPlayer = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +32,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            isPlayer = true;
+            collision.transform.SetParent(transform);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

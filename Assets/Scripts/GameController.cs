@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private Transform startPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,20 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            FindAnyObjectByType<Player>().transform.position = startPoint.position;
+            Invoke(nameof(LoadSceneCurrent), 0.2f);
         }
+    }
+    private void LoadSceneCurrent()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    private void LoadSceneNext()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    private void LoadSceneIndex(int x)
+    {
+        SceneManager.LoadScene(x);
     }
 }

@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private int indexIdle = 0;
     private bool change = true;
     private bool isAngry = true;
+    private bool isDead = false;
     private int[] iIdle = { 0, 1, 0, 3, 2, 0, 1, 2, 3, 1, 0, 4 };
     // Start is called before the first frame update
     void Start()
@@ -53,8 +54,9 @@ public class Player : MonoBehaviour
         {
             anim.SetFloat("velocityY", -1);
         }
-        Jump();
+        if (!isDead) Jump();
         Open();
+        anim.SetBool("dead", isDead);
     }
 
 
@@ -62,7 +64,8 @@ public class Player : MonoBehaviour
     {
         ChangeIdle();
         isGround = CheckGround();
-        Move();
+        if(!isDead) Move();
+        else rb.velocity = Vector3.zero;
     }
 
     private void Move()
@@ -153,5 +156,17 @@ public class Player : MonoBehaviour
     {
         isAngry = false;
         anim.SetBool("angry", false);
+    }
+
+    public bool Dead()
+    {
+        return isDead;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Dinh")
+        {
+            isDead = true;
+        }
     }
 }
