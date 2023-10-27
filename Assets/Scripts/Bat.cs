@@ -37,6 +37,7 @@ public class Bat : MonoBehaviour
             {
                 realTimeFly = 0; realTimeSleep = 0;
                 target = bPoint.position;
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
         }
         else

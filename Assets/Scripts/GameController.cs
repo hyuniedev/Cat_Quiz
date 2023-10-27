@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Transform startPoint;
+    [SerializeField] private Animator anim;
     private static int[] countGem = new int[100];
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,12 @@ public class GameController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) || FindObjectOfType<Player>().Dead())
         {
             FindAnyObjectByType<Player>().transform.position = startPoint.position;
-            Invoke(nameof(LoadSceneCurrent), 0.1f);
+            LoadSceneCurrent();
+        }
+        if (FindObjectOfType<Door>().getOpenDoor())
+        {
+            anim.SetBool("isDead", true);
+            Invoke(nameof(LoadSceneNext), 1f);
         }
     }
     public int getCountGem(int x)

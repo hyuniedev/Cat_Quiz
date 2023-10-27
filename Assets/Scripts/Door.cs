@@ -65,4 +65,8 @@ public class Door : MonoBehaviour
             }
         }
     }
+    public bool getOpenDoor()
+    {
+        return okOpen;
+    }
 }

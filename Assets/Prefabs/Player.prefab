@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 7044134578674308008}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1021378812257683525
 Rigidbody2D:
@@ -60,7 +60,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3323229630359782335
 MonoBehaviour:
@@ -90,7 +90,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5302905987749557802}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2df4aa3bd070b7e4782891a3177d7f3a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

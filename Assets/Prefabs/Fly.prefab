@@ -179,7 +179,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7155505327746331891}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2df4aa3bd070b7e4782891a3177d7f3a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -346,5 +346,5 @@ Transform:
   - {fileID: 7463097170328974373}
   - {fileID: 2787300437132099866}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
