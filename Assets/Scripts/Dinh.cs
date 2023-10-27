@@ -17,6 +17,7 @@ public class Dinh : MonoBehaviour
             {
                 dinh[i].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 dinh[i].GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+                dinh[i].GetComponent<Rigidbody2D>().gravityScale = 4;
             }
         }
         if (collision.gameObject.layer.Equals("Ground"))
