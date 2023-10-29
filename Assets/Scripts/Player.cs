@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float speedMove = 300;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioClip meow;
+    [SerializeField] private AudioClip die;
+    private AudioSource audio;
     private Vector3 v3 = new Vector3(1,0,0);
     private bool isGround = false;
     private float horizontal;
@@ -19,10 +22,22 @@ public class Player : MonoBehaviour
     private bool isAngry = true;
     private bool isDead = false;
     private int[] iIdle = { 0, 1, 0, 3, 2, 0, 1, 2, 3, 1, 0, 4 };
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating(nameof(meowAudio), 5f, 10f);
+    }
+    private void meowAudio()
+    {
+        if (iIdle[indexIdle] != 4 && !isDead)
+        {
+            audio.clip = meow;
+            audio.Play();
+        }
     }
 
     // Update is called once per frame
@@ -166,6 +181,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Dinh")
         {
+            audio.clip = die;
+            audio.Play();
             isDead = true;
         }
     }

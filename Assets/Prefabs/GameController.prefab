@@ -320,6 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105546050335979484}
   - component: {fileID: 8926630539604428195}
+  - component: {fileID: 1581827655806555687}
   - component: {fileID: 8085637942402725493}
   m_Layer: 0
   m_Name: GameController
@@ -359,6 +360,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
   anim: {fileID: 4672396366243247546}
+--- !u!114 &1581827655806555687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734815526479162115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5af1ce283367e42a2581070c812ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GUI_Main: {fileID: 0}
+  GUI_Play: {fileID: 0}
+  GUI_Store: {fileID: 0}
+  GUI_Help: {fileID: 0}
+  txt_CountGem: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!82 &8085637942402725493
 AudioSource:
   m_ObjectHideFlags: 0

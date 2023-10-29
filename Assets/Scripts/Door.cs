@@ -6,10 +6,15 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject keyE;
+    private AudioSource audio;
     private float timeHoldKey = 0;
     private bool okOpen = false;
     private bool isEnterPlayer = false;
     private bool haveKey = false;
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,7 @@ public class Door : MonoBehaviour
             {
                 okOpen = true;
                 timeHoldKey = 0;
+                audio.Play();
             }
         }
     }

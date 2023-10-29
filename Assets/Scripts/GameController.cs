@@ -25,13 +25,18 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R) || FindObjectOfType<Player>().Dead())
         {
-            FindAnyObjectByType<Player>().transform.position = startPoint.position;
-            LoadSceneCurrent();
+            GetComponent<AudioSource>().Play();
+            Invoke(nameof(LoadSceneCurrent), 0.5f);
         }
         if (FindObjectOfType<Door>().getOpenDoor())
         {
+            GetComponent<AudioSource>().Play();
             anim.SetBool("isDead", true);
             Invoke(nameof(LoadSceneNext), 1f);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
     public int getCountGem(int x)
@@ -49,10 +54,13 @@ public class GameController : MonoBehaviour
     }
     private void LoadSceneNext()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    private void LoadSceneIndex(int x)
-    {
-        SceneManager.LoadScene(x);
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

@@ -8,6 +8,7 @@ public class Gem : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            FindObjectOfType<Controller_GUI>().incCountGem();
             this.gameObject.SetActive(false);
             FindObjectOfType<GameController>().incCountGem();
         }
