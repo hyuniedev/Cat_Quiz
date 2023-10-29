@@ -133,6 +133,8 @@ MonoBehaviour:
   aPoint: {fileID: 7391885236990191716}
   bPoint: {fileID: 9151631504589077365}
   cPoint: {fileID: 8329499380439122194}
+  timeFly: 30
+  TimeSleep: 10
   speed: 2
 --- !u!95 &5033062067505760213
 Animator:

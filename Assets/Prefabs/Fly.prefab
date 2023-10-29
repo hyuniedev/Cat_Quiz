@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2329733397967439236}
   - component: {fileID: 2924058402657530471}
   - component: {fileID: 5208891902358388933}
+  - component: {fileID: 1510332118822318324}
   m_Layer: 3
   m_Name: GroundFly
   m_TagString: Untagged
@@ -227,9 +228,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09695ab195bafbc4889127ab4bec69ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 5302905987749557802, guid: 25b114a51a7dad04fb55369ff3754ab0, type: 3}
   aPoint: {fileID: 7463097170328974373}
   bPoint: {fileID: 2787300437132099866}
   speed: 2
+--- !u!50 &1510332118822318324
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155505327746331891}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8291462488876668695
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private Transform aPoint, bPoint;
     [SerializeField] private float speed;
     private Vector3 target;
+    private bool isEnter = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,14 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (isEnter)
+        {
+            FindObjectOfType<Player>().transform.parent = transform;
+        }
+        else
+        {
+            FindObjectOfType<Player>().transform.parent = null;
+        }
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
         if(Vector2.Distance(transform.position, aPoint.position) < 0.1f)
         {
@@ -32,18 +41,14 @@ public class MovingPlatform : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.transform.SetParent(transform);
-
+            isEnter = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision != null)
+        if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.tag == "Player")
-            {
-                collision.transform.SetParent(null);
-            }
+            isEnter = false;
         }
     }
 }
