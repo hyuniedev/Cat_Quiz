@@ -1,0 +1,5 @@
+- Di chuyển: ADW hoặc Các phím chỉ hướng Up - Right - Left.
+- Có chìa khóa mới mở được cửa. Khi đã có chìa khóa, đứng tại cánh cửa và giữ phím E đến khi mở cửa.
+- Giữ Left Shift để tăng tốc hoặc để nhảy xa hơn.
+- Trở về menu : Esc.
+- Thoát game: ALT + F4.
