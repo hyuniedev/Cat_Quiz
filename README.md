@@ -8,3 +8,9 @@ HƯỚNG DẪN CHƠI:
 - Lấy chìa khóa để mở cửa qua màn.
   
 Ngày kết thúc: 30/10/2023 - 3:10AM
+CÁCH TẢI:
+- Download thư mục exe về để chơi ngay hoặc Download file HyuNie.rar về và giải nén.
+- Sau khi tải về và giải nén (nếu cần) thì hãy mở file Cat_Fun_Quiz.exe để bắt đầu chơi game.
+- Khi vào game, muốn thoát game bạn có thể dùng Alt + f4 để thoát game.
+
+CẢM ƠN BẠN ĐÃ TRẢI NGHIỆM.
