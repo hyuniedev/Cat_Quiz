@@ -1,7 +1,6 @@
 # Cat_Quiz
 Ngày bắt đầu dự án: 25/10/2023 - 0:30AM
 Ngày kết thúc: 30/10/2023 - 3:10AM
-Đây là project cá nhân của Nguyễn Hữu Niên, sử dụng các asset free.
 HƯỚNG DẪN CHƠI:
 - Dùng các phím ADW hoặc UP LEFT RIGHT để di chuyển và nhảy, ngoài ra có thể dùng Space để nhảy.
 - Giữ phím Left Shift để tăng tốc độ di chuyển (chạy) và giúp tăng lực nhảy.
